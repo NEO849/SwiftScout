@@ -1,0 +1,17 @@
+//
+//  SwiftScoutTests.swift
+//  SwiftScoutTests
+//
+//  Created by Michael Fleps on 09.04.25.
+//
+
+import Testing
+@testable import SwiftScout
+
+struct SwiftScoutTests {
+
+    @Test func example() async throws {
+        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    }
+
+}
