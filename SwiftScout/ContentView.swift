@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  SwiftScout
 //
-//  Created by Michael Fleps on 09.04.25..
+//  Created by Michael Fleps on 09.04.25.
 //
 
 import SwiftUI
