@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B5A4E4A12DA600F900239D6A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A4E4A02DA600F900239D6A /* Cocoa.framework */; };
+		B5A4E4AD2DA600F900239D6A /* SwiftScoutExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B5A4E49E2DA600F900239D6A /* SwiftScoutExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B5A4E4B42DA601BC00239D6A /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A4E4B32DA601BC00239D6A /* XcodeKit.framework */; };
+		B5A4E4B52DA601BC00239D6A /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5A4E4B32DA601BC00239D6A /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		B5A4E47E2DA5DB1E00239D6A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,13 +28,58 @@
 			remoteGlobalIDString = B5A4E46E2DA5DB1C00239D6A;
 			remoteInfo = SwiftScout;
 		};
+		B5A4E4AB2DA600F900239D6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5A4E4672DA5DB1C00239D6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5A4E49D2DA600F900239D6A;
+			remoteInfo = SwiftScoutExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B5A4E4B22DA600F900239D6A /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B5A4E4AD2DA600F900239D6A /* SwiftScoutExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5A4E4B62DA601BC00239D6A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B5A4E4B52DA601BC00239D6A /* XcodeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B5A4E46F2DA5DB1C00239D6A /* SwiftScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A4E47D2DA5DB1E00239D6A /* SwiftScoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftScoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A4E4872DA5DB1E00239D6A /* SwiftScoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftScoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5A4E49E2DA600F900239D6A /* SwiftScoutExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SwiftScoutExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5A4E4A02DA600F900239D6A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		B5A4E4B32DA601BC00239D6A /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B5A4E4AE2DA600F900239D6A /* Exceptions for "SwiftScoutExtension" folder in "SwiftScoutExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B5A4E49D2DA600F900239D6A /* SwiftScoutExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B5A4E4712DA5DB1C00239D6A /* SwiftScout */ = {
@@ -43,6 +95,14 @@
 		B5A4E48A2DA5DB1E00239D6A /* SwiftScoutUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SwiftScoutUITests;
+			sourceTree = "<group>";
+		};
+		B5A4E4A42DA600F900239D6A /* SwiftScoutExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B5A4E4AE2DA600F900239D6A /* Exceptions for "SwiftScoutExtension" folder in "SwiftScoutExtension" target */,
+			);
+			path = SwiftScoutExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,6 +129,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5A4E49B2DA600F900239D6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5A4E4A12DA600F900239D6A /* Cocoa.framework in Frameworks */,
+				B5A4E4B42DA601BC00239D6A /* XcodeKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +147,8 @@
 				B5A4E4712DA5DB1C00239D6A /* SwiftScout */,
 				B5A4E4802DA5DB1E00239D6A /* SwiftScoutTests */,
 				B5A4E48A2DA5DB1E00239D6A /* SwiftScoutUITests */,
+				B5A4E4A42DA600F900239D6A /* SwiftScoutExtension */,
+				B5A4E49F2DA600F900239D6A /* Frameworks */,
 				B5A4E4702DA5DB1C00239D6A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,8 +159,18 @@
 				B5A4E46F2DA5DB1C00239D6A /* SwiftScout.app */,
 				B5A4E47D2DA5DB1E00239D6A /* SwiftScoutTests.xctest */,
 				B5A4E4872DA5DB1E00239D6A /* SwiftScoutUITests.xctest */,
+				B5A4E49E2DA600F900239D6A /* SwiftScoutExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B5A4E49F2DA600F900239D6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5A4E4B32DA601BC00239D6A /* XcodeKit.framework */,
+				B5A4E4A02DA600F900239D6A /* Cocoa.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,10 +183,12 @@
 				B5A4E46B2DA5DB1C00239D6A /* Sources */,
 				B5A4E46C2DA5DB1C00239D6A /* Frameworks */,
 				B5A4E46D2DA5DB1C00239D6A /* Resources */,
+				B5A4E4B22DA600F900239D6A /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B5A4E4AC2DA600F900239D6A /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				B5A4E4712DA5DB1C00239D6A /* SwiftScout */,
@@ -163,6 +246,29 @@
 			productReference = B5A4E4872DA5DB1E00239D6A /* SwiftScoutUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		B5A4E49D2DA600F900239D6A /* SwiftScoutExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5A4E4AF2DA600F900239D6A /* Build configuration list for PBXNativeTarget "SwiftScoutExtension" */;
+			buildPhases = (
+				B5A4E49A2DA600F900239D6A /* Sources */,
+				B5A4E49B2DA600F900239D6A /* Frameworks */,
+				B5A4E49C2DA600F900239D6A /* Resources */,
+				B5A4E4B62DA601BC00239D6A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B5A4E4A42DA600F900239D6A /* SwiftScoutExtension */,
+			);
+			name = SwiftScoutExtension;
+			packageProductDependencies = (
+			);
+			productName = SwiftScoutExtension;
+			productReference = B5A4E49E2DA600F900239D6A /* SwiftScoutExtension.appex */;
+			productType = "com.apple.product-type.xcode-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,6 +290,9 @@
 						CreatedOnToolsVersion = 16.3;
 						TestTargetID = B5A4E46E2DA5DB1C00239D6A;
 					};
+					B5A4E49D2DA600F900239D6A = {
+						CreatedOnToolsVersion = 16.3;
+					};
 				};
 			};
 			buildConfigurationList = B5A4E46A2DA5DB1C00239D6A /* Build configuration list for PBXProject "SwiftScout" */;
@@ -203,6 +312,7 @@
 				B5A4E46E2DA5DB1C00239D6A /* SwiftScout */,
 				B5A4E47C2DA5DB1E00239D6A /* SwiftScoutTests */,
 				B5A4E4862DA5DB1E00239D6A /* SwiftScoutUITests */,
+				B5A4E49D2DA600F900239D6A /* SwiftScoutExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +333,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B5A4E4852DA5DB1E00239D6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5A4E49C2DA600F900239D6A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +370,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5A4E49A2DA600F900239D6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -265,6 +389,11 @@
 			isa = PBXTargetDependency;
 			target = B5A4E46E2DA5DB1C00239D6A /* SwiftScout */;
 			targetProxy = B5A4E4882DA5DB1E00239D6A /* PBXContainerItemProxy */;
+		};
+		B5A4E4AC2DA600F900239D6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5A4E49D2DA600F900239D6A /* SwiftScoutExtension */;
+			targetProxy = B5A4E4AB2DA600F900239D6A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -511,6 +640,60 @@
 			};
 			name = Release;
 		};
+		B5A4E4B02DA600F900239D6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SwiftScoutExtension/SwiftScoutExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T8M3GABN4B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftScoutExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SwiftScoutExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.swiftscout.SwiftScout.SwiftScoutExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B5A4E4B12DA600F900239D6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SwiftScoutExtension/SwiftScoutExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T8M3GABN4B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftScoutExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SwiftScoutExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.swiftscout.SwiftScout.SwiftScoutExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -546,6 +729,15 @@
 			buildConfigurations = (
 				B5A4E4982DA5DB1E00239D6A /* Debug */,
 				B5A4E4992DA5DB1E00239D6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5A4E4AF2DA600F900239D6A /* Build configuration list for PBXNativeTarget "SwiftScoutExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5A4E4B02DA600F900239D6A /* Debug */,
+				B5A4E4B12DA600F900239D6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
