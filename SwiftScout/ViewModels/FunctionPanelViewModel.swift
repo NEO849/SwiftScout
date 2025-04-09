@@ -13,13 +13,13 @@ class FunctionPanelViewModel: ObservableObject {
     @Published var functions: [FunctionModel] = []
     @Published var searchTerm: String = ""
     
-    init() {
-        loadData()
-    }
-
-    /// Entscheidung extern, lädt Daten vom ausgewählten Provider
-    func loadData() {
-        let provider = ChooseProvider.getProvider()
-        self.functions = provider.loadFunctions()
-    }
-}
+    func loadFunctions() {
+         let provider = ChooseProvider.getProvider()
+         self.functions = provider.loadFunctions()
+     }
+     
+     func openFunctionInXcode(_ function: FunctionModel) {
+         // Später Xcode-Öffnen-Logik
+         print("Öffne Funktion: \(function.functionName)")
+     }
+ }
