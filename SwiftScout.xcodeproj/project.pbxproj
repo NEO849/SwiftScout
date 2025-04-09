@@ -72,6 +72,30 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B573310C2DA701B200CAC534 /* Exceptions for "SwiftScout" folder in "SwiftScoutTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/FunctionModel.swift,
+				Protocols/FunctionDataProvider.swift,
+			);
+			target = B5A4E47C2DA5DB1E00239D6A /* SwiftScoutTests */;
+		};
+		B573310D2DA701B200CAC534 /* Exceptions for "SwiftScout" folder in "SwiftScoutUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/FunctionModel.swift,
+				Protocols/FunctionDataProvider.swift,
+			);
+			target = B5A4E4862DA5DB1E00239D6A /* SwiftScoutUITests */;
+		};
+		B573310E2DA701B200CAC534 /* Exceptions for "SwiftScout" folder in "SwiftScoutExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/FunctionModel.swift,
+				Protocols/FunctionDataProvider.swift,
+			);
+			target = B5A4E49D2DA600F900239D6A /* SwiftScoutExtension */;
+		};
 		B5A4E4AE2DA600F900239D6A /* Exceptions for "SwiftScoutExtension" folder in "SwiftScoutExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -84,6 +108,11 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B5A4E4712DA5DB1C00239D6A /* SwiftScout */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B573310C2DA701B200CAC534 /* Exceptions for "SwiftScout" folder in "SwiftScoutTests" target */,
+				B573310D2DA701B200CAC534 /* Exceptions for "SwiftScout" folder in "SwiftScoutUITests" target */,
+				B573310E2DA701B200CAC534 /* Exceptions for "SwiftScout" folder in "SwiftScoutExtension" target */,
+			);
 			path = SwiftScout;
 			sourceTree = "<group>";
 		};
