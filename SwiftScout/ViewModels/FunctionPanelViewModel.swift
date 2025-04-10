@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AppKit
 
 /// Für das Floating Panel. Verarbeitet die Logik, z. B. Daten laden, Filter anwenden, Navigation durchführen.
 class FunctionPanelViewModel: ObservableObject {
@@ -18,8 +19,9 @@ class FunctionPanelViewModel: ObservableObject {
          self.functions = provider.loadFunctions()
      }
      
-     func openFunctionInXcode(_ function: FunctionModel) {
-         // Später Xcode-Öffnen-Logik
-         print("Öffne Funktion: \(function.functionName)")
+     func openFile(_ function: FunctionModel) {
+         print("Datei der gesuchten Funktion geöffnet: \(function.functionName)")
+         let url = URL(fileURLWithPath: function.filePath)
+         NSWorkspace.shared.open(url)
      }
  }

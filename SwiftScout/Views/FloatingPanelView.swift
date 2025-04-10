@@ -25,7 +25,6 @@ struct FloatingPanelView: View {
                      ForEach(viewModel.functions) { function in
                          Button(action: {
                              // Hier später: Navigation zur Datei
-                             openFile(function.filePath)
                          }) {
                              HStack {
                                  Text(function.functionName)
@@ -52,18 +51,12 @@ struct FloatingPanelView: View {
          .cornerRadius(12)
          .shadow(radius: 20)
      }
-     
-     /// Öffnen einer Datei im Finder (ersetzt später durch Xcode-Integration)
-     func openFile(_ path: URL) {
-         NSWorkspace.shared.open(path)
-     }
  }
 
 #Preview {
     let viewModel = FunctionPanelViewModel()
      ChooseProvider.useMockData = true
      viewModel.loadFunctions()
-     
      return FloatingPanelView(
          isVisible: .constant(true),
          viewModel: viewModel

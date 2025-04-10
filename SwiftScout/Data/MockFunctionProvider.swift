@@ -18,24 +18,28 @@ struct MockFunctionProvider: FunctionDataProvider {
         guard MockSettings.useMockData else { return [] }
         return [
             FunctionModel(
-                functionName: "fetchUserData()",
+                functionName: "useColors()",
                 fileName: "UserService.swift",
-                filePath: "/Users/neo/XcodeProjects/SwiftScout/Services/UserService.swift"
+                filePath: "/Users/neo/XcodeProjects/SwiftScout/Services/UserService.swift",
+                lineNumber: 10,
             ),
             FunctionModel(
-                functionName: "updateUI(with:)",
-                fileName: "MainView.swift",
-                filePath: "/Users/neo/XcodeProjects/SwiftScout/Views/MainView.swift"
+                functionName: "useColors()",
+                fileName: "ImageView.swift",
+                filePath: "/Users/neo/XcodeProjects/SwiftScout/Views/ImageView.swift",
+                lineNumber: 45,
             ),
             FunctionModel(
-                functionName: "calculateSum(_:_:)",
-                fileName: "MathUtils.swift",
-                filePath: "/Users/neo/XcodeProjects/SwiftScout/Utils/MathUtils.swift"
+                functionName: "useColors()",
+                fileName: "PositionUtils.swift",
+                filePath: "/Users/neo/XcodeProjects/SwiftScout/Utils/PositionUtils.swift",
+                lineNumber: 123,
             ),
             FunctionModel(
-                functionName: "logError(_:)",
+                functionName: "useColors()",
                 fileName: "Logger.swift",
-                filePath: "/Users/neo/XcodeProjects/SwiftScout/Core/Logger.swift"
+                filePath: "/Users/neo/XcodeProjects/SwiftScout/Core/Logger.swift",
+                lineNumber: 369,
             )
         ]
     }

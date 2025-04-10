@@ -13,4 +13,5 @@ struct FunctionModel: Identifiable {
     let functionName: String
     let fileName: String
     let filePath: String
+    let lineNumber: Int 
 }
