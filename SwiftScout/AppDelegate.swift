@@ -1,24 +1,16 @@
 //
-//  ContentView.swift
+//  AppDelegate.swift
 //  SwiftScout
 //
 //  Created by Michael Fleps on 09.04.25.
 //
 
-import SwiftUI
+import AppKit
 
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        print("🚀 SwiftScout ist gestartet")
+        // Globales Monitoring initialisieren
     }
-}
-
-#Preview {
-    ContentView()
 }
