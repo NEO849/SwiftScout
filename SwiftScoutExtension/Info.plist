@@ -12,9 +12,16 @@
 					<key>XCSourceEditorCommandClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SourceEditorCommand</string>
 					<key>XCSourceEditorCommandIdentifier</key>
-					<string>$(PRODUCT_BUNDLE_IDENTIFIER).SourceEditorCommand</string>
+					<string>de.swiftscout.findFunction</string>
 					<key>XCSourceEditorCommandName</key>
-					<string>Source Editor Command</string>
+					<string>Find Function References</string>
+					<key>XCSourceEditorCommandKeyBindings</key>
+					<dict>
+						<key>Modifier</key>
+						<string>Shift+Command</string>
+						<key>Mouse</key>
+						<string>LeftClick</string>
+					</dict>
 				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>
