@@ -12,5 +12,5 @@ struct FunctionModel: Identifiable {
     let id = UUID()
     let functionName: String
     let fileName: String
-    let filePath: URL
+    let filePath: String
 }
