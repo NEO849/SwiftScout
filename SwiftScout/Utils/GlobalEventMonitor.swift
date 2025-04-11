@@ -14,6 +14,7 @@ class GlobalEventMonitor {
     private let handler: () -> Void
     private var monitor: Any?
     
+    /// Wird Init, wenn Shift und Command gedrückt sind(Handler wird  Z.34 aufgerufen)
     init(handler: @escaping () -> Void) {
         self.handler = handler
     }
