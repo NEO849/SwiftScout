@@ -7,15 +7,9 @@
 
 import Foundation
 
-// MARK: - Mockdaten Variable
-struct MockSettings {
-    static var useMockData: Bool = true 
-}
-
-// MARK: - Mock-Datenprovider
+// MARK: - Mock-Daten
 struct MockFunctionProvider: FunctionDataProvider {
     func loadFunctions() -> [FunctionModel] {
-        guard MockSettings.useMockData else { return [] }
         return [
             FunctionModel(
                 functionName: "useColors()",
