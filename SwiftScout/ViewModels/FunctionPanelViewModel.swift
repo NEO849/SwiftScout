@@ -14,14 +14,20 @@ class FunctionPanelViewModel: ObservableObject {
     @Published var functions: [FunctionModel] = []
     @Published var searchTerm: String = ""
     
+    init() {
+        loadFunctions()
+    }
+    
     func loadFunctions() {
          let provider = ChooseProvider.getProvider()
          self.functions = provider.loadFunctions()
      }
+    
+    /// Öffnet eine Datei über den Finder bzw. über das Standardprogramm
+    /// Wird direkt von der UI aufgerufen (z. B. Tap auf eine Funktion)
+    func openFile(_ function: FunctionModel) {
+        print("🔍 Öffne Funktion: \(function.functionName)")
+        FunctionNavigator.navigate(to: function) // Navigiert direkt zu Position
+    }
+}
      
-     func openFile(_ function: FunctionModel) {
-         print("Datei der gesuchten Funktion geöffnet: \(function.functionName)")
-         let url = URL(fileURLWithPath: function.filePath)
-         NSWorkspace.shared.open(url)
-     }
- }
