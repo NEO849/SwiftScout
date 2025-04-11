@@ -75,11 +75,11 @@
 		B573310E2DA701B200CAC534 /* Exceptions for "SwiftScout" folder in "SwiftScoutExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Data/ChooseProvider.swift,
-				Data/MockFunctionProvider.swift,
-				Data/RealFunctionProvider.swift,
-				Models/FunctionModel.swift,
-				Protocols/FunctionDataProvider.swift,
+				Data/Models/FunctionModel.swift,
+				Data/Protocols/FunctionDataProvider.swift,
+				Data/Repositories/MockFunctionProvider.swift,
+				Data/Repositories/RealFunctionProvider.swift,
+				Data/Services/ChooseProvider.swift,
 			);
 			target = B5A4E49D2DA600F900239D6A /* SwiftScoutExtension */;
 		};
