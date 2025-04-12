@@ -11,6 +11,7 @@ import AppKit
 /// Für das Floating Panel. Laden, Filtern und Öffnen von Funktionsreferenze  (Source of Truth).
 class FloatingPanelViewModel: ObservableObject {
     
+    @Published var isPanelVisible: Bool = false
     @Published var functions: [FunctionModel] = []
     @Published var selectedFunction: String = ""
     private let service = SourceKitService()

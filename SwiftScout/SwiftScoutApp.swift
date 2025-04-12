@@ -9,22 +9,14 @@ import SwiftUI
 
 @main
 struct SwiftScoutApp: App {
+    
+    @StateObject private var panelViewModel = FloatingPanelViewModel()
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup {
            EmptyView()
         }
+        .environmentObject(panelViewModel)
     }
-}
-
-#Preview {
-    let viewModel = FunctionPanelViewModel()
-    viewModel.loadFunctions()
-    let isVisible = Binding<Bool>(
-        get: { true },
-        set: { _ in } // Ignorieren
-    )
-    return FloatingPanelView(isVisible: isVisible, viewModel: viewModel)
-        .frame(width: 400, height: 400)
 }

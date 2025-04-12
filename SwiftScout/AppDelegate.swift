@@ -6,26 +6,27 @@
 //
 
 import Cocoa
+import SwiftUI
 
 /// Verwaltet wichtige Ereignisse im Lebenszyklus der Anwendung
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    /// Optionale Instanz, der globale Mausereignisse überwacht
     var eventMonitor: GlobalEventMonitor?
+    var panelViewModel: FloatingPanelViewModel?
+    var windowManager = NsWindowManager()
     
     func applicationDidFinishLaunching(_ notification: Notification) {
+        // Globaler EventMonitor startet und bei Tastenkombi Panel anzeigt
         eventMonitor = GlobalEventMonitor {
-            // später: Panel öffnen
+            if let viewModel = self.panelViewModel {
+                self.windowManager.showPanel(with: viewModel)
+                viewModel.isPanelVisible = true // Flag im ViewModel setzen
+            }
         }
-        if let monitor = eventMonitor {
-            monitor.start()
-        }
+        eventMonitor?.start()
     }
     
-    /// Wird aufgerufen, kurz bevor die Anwendung beendet wird. Stoppt die Überwachung globaler Ereignisse, um Ressourcen freizugeben.
     func applicationWillTerminate(_ notification: Notification) {
-        if let monitor = eventMonitor {
-            monitor.stop()
-        }
+        eventMonitor?.stop()
     }
 }

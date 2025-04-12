@@ -77,9 +77,9 @@
 			membershipExceptions = (
 				Data/Models/FunctionModel.swift,
 				Data/Protocols/FunctionDataProvider.swift,
+				Data/Repositories/ChooseProvider.swift,
 				Data/Repositories/MockFunctionProvider.swift,
 				Data/Repositories/RealFunctionProvider.swift,
-				Data/Services/ChooseProvider.swift,
 			);
 			target = B5A4E49D2DA600F900239D6A /* SwiftScoutExtension */;
 		};
