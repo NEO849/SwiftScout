@@ -27,7 +27,6 @@ struct FloatingPanelView: View {
                         FunctionRow(function: function) {
                             panelViewModel.openFile(function)
                         }
-                        .buttonStyle(PlainButtonStyle())
                     }
                 }
             }
