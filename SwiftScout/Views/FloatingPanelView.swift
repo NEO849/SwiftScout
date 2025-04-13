@@ -24,41 +24,46 @@ struct FloatingPanelView: View {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 10) {
                     ForEach(panelViewModel.functions) { function in
-                        Button(action: {
-                            // Bei Klick → Datei öffnen
+                        FunctionRow(function: function) {
                             panelViewModel.openFile(function)
-                        }) {
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    Text(function.functionName)
-                                        .font(.system(size: 14, weight: .medium))
-                                        .foregroundColor(.blue)
-                                    Text(function.fileName)
-                                        .font(.system(size: 12))
-                                        .foregroundColor(.secondary)
-                                }
-                                Spacer()
-                                Text("⤴︎")
-                                    .foregroundColor(.gray)
-                            }
-                            .padding(8)
-                            .background(Color(.windowBackgroundColor))
-                            .cornerRadius(8)
-                            .shadow(color: Color.black.opacity(0.05), radius: 1, x: 0, y: 1)
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
                 }
-                .padding()
             }
-            .frame(maxHeight: 300)
         }
-        .padding()
-        .frame(width: 420)
-        .background(.ultraThinMaterial)
-        .cornerRadius(16)
-        .shadow(radius: 20)
     }
+}
+
+struct FunctionRow: View {
+    let function: FunctionModel
+    let onTap: () -> Void
+    
+    var body: some View {
+        Button(action: onTap) {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(function.functionName)
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(.blue)
+                    Text(function.fileName)
+                        .font(.system(size: 12))
+                        .foregroundColor(.secondary)
+                }
+                Spacer()
+                Text("⤴︎")
+                    .foregroundColor(.gray)
+            }
+            .padding(12)
+            .background(Color(.windowBackgroundColor))
+            .cornerRadius(8)
+            .shadow(color: Color.black.opacity(0.05), radius: 1, x: 0, y: 1)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .padding(.vertical, 4)
+        .padding(.horizontal)
+    }
+        
 }
 
 #Preview {
