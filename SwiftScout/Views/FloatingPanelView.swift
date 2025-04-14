@@ -44,14 +44,14 @@ struct FunctionRow: View {
                 VStack(alignment: .leading) {
                     Text(function.functionName)
                         .font(.system(size: 14, weight: .medium))
-                        .foregroundColor(.blue)
+                        .foregroundColor(.mint)
                     Text(function.fileName)
                         .font(.system(size: 12))
                         .foregroundColor(.secondary)
                 }
                 Spacer()
                 Text("⤴︎")
-                    .foregroundColor(.gray)
+                    .foregroundColor(.mint)
             }
             .padding(12)
             .background(Color(.windowBackgroundColor))
@@ -67,7 +67,6 @@ struct FunctionRow: View {
 
 #Preview {
     let viewModel = FloatingPanelViewModel()
-    ChooseProvider.useMockData = true
     viewModel.loadFunctions()
     return FloatingPanelView()
         .environmentObject(viewModel)

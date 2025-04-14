@@ -14,16 +14,17 @@ class FloatingPanelViewModel: ObservableObject {
     @Published var isPanelVisible: Bool = false
     @Published var functions: [FunctionModel] = []
     @Published var selectedFunction: String = ""
+    @Published var searchTerm: String = ""
     private let service = SourceKitService()
+    private let provider: FunctionDataProvider
     
     init() {
-        loadFunctions()
+        self.provider = ChooseProvider.useMockData ? MockFunctionProvider() : RealFunctionProvider()
+        self.loadFunctions(for: "")
     }
     
-    /// Lädt alle verfügbaren Funktionsdaten, aus echtem SourceKit, oder Mock-Daten.
-    func loadFunctions() {
-        let provider = ChooseProvider.getProvider()
-        self.functions = provider.loadFunctions()
+    func loadFunctions(for functionName: String = "") {
+        self.functions = provider.loadFunctions() // Nutzt übergebenen Provider
     }
     
     // Sucht nach Funktionsreferenzen im gesamten Projekt

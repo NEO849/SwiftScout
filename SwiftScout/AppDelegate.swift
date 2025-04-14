@@ -16,6 +16,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var windowManager = NsWindowManager()
     
     func applicationDidFinishLaunching(_ notification: Notification) {
+        // Entscheide hier, ob Mock-Daten verwendet werden sollen (z.B. aus einer Konfigurationsdatei)
+        ChooseProvider.useMockData = true
+
+        panelViewModel = FloatingPanelViewModel()
+        
         // Globaler EventMonitor startet und bei Tastenkombi Panel anzeigt
         eventMonitor = GlobalEventMonitor {
             if let viewModel = self.panelViewModel {
@@ -29,4 +34,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ notification: Notification) {
         eventMonitor?.stop()
     }
+}
+
+struct ChooseProvider {
+    static var useMockData: Bool = false
 }

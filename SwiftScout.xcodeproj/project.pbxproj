@@ -77,7 +77,6 @@
 			membershipExceptions = (
 				Data/Models/FunctionModel.swift,
 				Data/Protocols/FunctionDataProvider.swift,
-				Data/Repositories/ChooseProvider.swift,
 				Data/Repositories/MockFunctionProvider.swift,
 				Data/Repositories/RealFunctionProvider.swift,
 			);
