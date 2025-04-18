@@ -5,44 +5,47 @@
 //  Created by Michael Fleps on 10.04.25.
 //
 
+import AppKit
 import Cocoa
 
-/// Überwacht globale Tastenkombinationen, Funktioniert nur im Vordergrund, oder mit  Accessibility-Rechten.
-class GlobalEventMonitor {
+final class GlobalEventMonitor {
     
-    /// Closure, die bei Erkennung ausgelöst wird
-    private let handler: () -> Void
     private var monitor: Any?
+    private let panelViewModel: FloatingPanelViewModel
     
-    /// Wird Init, wenn Shift und Command gedrückt sind(Handler wird  Z.34 aufgerufen)
-    init(handler: @escaping () -> Void) {
-        self.handler = handler
+    init(viewModel: FloatingPanelViewModel) {
+        self.panelViewModel = viewModel
     }
     
-    /// Aktiviert den globalen Event-Monitor (Doppelte Registrierung verhindern)
-    func start() {
-        stop()
+    /// Startet globale Mausklick-Überwachung
+    func startMonitoring() {
         monitor = NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown]) { [weak self] event in
+            guard let self = self else { return }
             
-            // Modifier Keys prüfen: Shift + Command
-            let flags = event.modifierFlags
-            let isShift = flags.contains(.shift)
-            let isCommand = flags.contains(.command)
-            
-            if isShift && isCommand {
-                print("✅ Shift + Command + Klick erkannt")
-                self?.handler()
+            // Tastenkombination prüfen
+            if isShiftCommandClick(event){
+                // Aktuellen Datei-Pfad ermitteln
+                if let filePath = getActiveXcodeFilePath() {
+                    
+                    // Funktionen aus Datei laden (via SourceKitten)
+                    panelViewModel.loadFunctions(for: filePath)
+                    
+                    // Panel anzeigen
+                    FloatingPanelManager.shared.showPanel(with: panelViewModel)
+                }
             }
         }
     }
     
-    func stop() {
+    private func isShiftCommandClick(_ event: NSEvent) -> Bool {
+        return event.modifierFlags.contains(.command) &&
+               event.modifierFlags.contains(.shift)
+    }
+    
+    func stopMonitoring() {
         if let monitor = monitor {
             NSEvent.removeMonitor(monitor)
             self.monitor = nil
         }
-    }
-    deinit {
-        stop()
     }
 }
