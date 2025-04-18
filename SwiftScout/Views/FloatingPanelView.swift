@@ -14,8 +14,8 @@ struct FloatingPanelView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Funktionsübersicht")
-                .font(.title2)
+            Text("REFERENZEN:")
+                .font(.subheadline)
                 .fontWeight(.semibold)
                 .padding(.top)
                 .padding(.horizontal)
@@ -42,7 +42,7 @@ struct FunctionRow: View {
         Button(action: onTap) {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(function.functionName)
+                    Text(function.name)
                         .font(.system(size: 14, weight: .medium))
                         .foregroundColor(.mint)
                     Text(function.fileName)
@@ -62,13 +62,19 @@ struct FunctionRow: View {
         .padding(.vertical, 4)
         .padding(.horizontal)
     }
-        
 }
 
 #Preview {
-    let viewModel = FloatingPanelViewModel()
-    viewModel.loadFunctions()
-    return FloatingPanelView()
-        .environmentObject(viewModel)
-        .frame(width: 420, height: 350)
+    FloatingPanelPreview()
+}
+struct FloatingPanelPreview: View {
+    @StateObject var viewModel = FloatingPanelViewModel()
+    var body: some View {
+        FloatingPanelView()
+            .environmentObject(viewModel)
+            .frame(width: 420, height: 350)
+            .onAppear {
+                viewModel.loadFunctions(for: #file)
+            }
+    }
 }

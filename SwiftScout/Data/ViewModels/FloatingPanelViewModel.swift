@@ -13,28 +13,32 @@ class FloatingPanelViewModel: ObservableObject {
     
     @Published var isPanelVisible: Bool = false
     @Published var functions: [FunctionModel] = []
-    @Published var selectedFunction: String = ""
-    @Published var searchTerm: String = ""
-    private let service = SourceKitService()
     private let provider: FunctionDataProvider
     
     init() {
-        self.provider = ChooseProvider.useMockData ? MockFunctionProvider() : RealFunctionProvider()
-        self.loadFunctions(for: "")
+        self.provider = ChooseProvider.useMockData ? MockFunctionProvider() : RealFunctionProvider(filePath: "")
+        self.functions = []
     }
     
-    func loadFunctions(for functionName: String = "") {
-        self.functions = provider.loadFunctions() // Nutzt übergebenen Provider
+    func loadFunctions(for filePath: String) {
+        if ChooseProvider.useMockData {
+            // Verwendet Mock, oder Real-Provider
+            let mockProvider = MockFunctionProvider()
+            self.functions = mockProvider.loadFunctions()
+        } else {
+            let realProvider = RealFunctionProvider(filePath: filePath)
+            self.functions = realProvider.loadFunctions()
+        }
     }
     
-    // Sucht nach Funktionsreferenzen im gesamten Projekt
-    func searchFunction(named name: String) {
-        self.selectedFunction = name
-        self.functions = service.findReferences(for: name)
+    // Datei in Xcode öffnen und das Floating Panel ausblenden
+    func openFile(_ function: FunctionModel) {
+        let url = URL(fileURLWithPath: function.filePath)
+        NSWorkspace.shared.open(url)
+        self.isPanelVisible = false
     }
-    
-    // Öffnet die ausgewählte Referenz in Xcode
-    func openFile(_ functions: FunctionModel) {
-        service.openFile(functions.filePath, atLine: functions.lineNumber)
-    }
+}
+
+struct ChooseProvider {
+    static var useMockData: Bool = true
 }
