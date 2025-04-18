@@ -10,19 +10,20 @@ import SwiftUI
 @main
 struct SwiftScoutApp: App {
     
-    @StateObject private var panelViewModel = FloatingPanelViewModel()
-    /// Verbindet den SwiftUI-Lebenszyklus mit dem App-Delegaten (ist kein View, sondern Teil der App-Lifecycle-Logik (Cocoa / UIKit))
-    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    // Kein echtes UI nötig – Panel wird über GlobalMonitor geöffnet.
+    @StateObject var viewModel = FloatingPanelViewModel()
+    let monitor: GlobalEventMonitor
     
-    /// Daher wird  eine  explizite Instanz übergeben.
     init() {
-        appDelegate.panelViewModel = panelViewModel
+        let vm = FloatingPanelViewModel()
+        self._viewModel = StateObject(wrappedValue: vm)
+        self.monitor = GlobalEventMonitor(viewModel: vm)
+        self.monitor.startMonitoring() // Startet Klick-Erkennung
     }
     
     var body: some Scene {
         WindowGroup {
-           EmptyView()
+            EmptyView()
         }
-        .environmentObject(panelViewModel)
     }
 }
