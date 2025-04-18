@@ -10,8 +10,16 @@ import Foundation
 /// Repräsentiert eine gefundene Funktion im Projekt
 struct FunctionModel: Identifiable {
     let id = UUID()
-    let functionName: String
-    let fileName: String
+    let name: String
     let filePath: String
-    let lineNumber: Int 
+    let fileName: String
+    let lineNumber: Int
+    
+    /// Eigener Initializer für dynamische Erstellung über RawSymbol
+    init(name: String, path: String, offset: Int) {
+        self.name = name
+        self.filePath = path
+        self.fileName = URL(fileURLWithPath: path).lastPathComponent
+        self.lineNumber = offset
+    }
 }

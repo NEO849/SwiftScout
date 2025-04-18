@@ -12,29 +12,21 @@ struct MockFunctionProvider: FunctionDataProvider {
     func loadFunctions() -> [FunctionModel] {
         return [
             FunctionModel(
-                functionName: "useColors()",
-                fileName: "UserService.swift",
-                filePath: "/Users/neo/XcodeProjects/SwiftScout/Services/UserService.swift",
-                lineNumber: 10,
-            ),
+                name: "useColors()",
+                path: "/Users/neo/XcodeProjects/SwiftScout/Services/UserService.swift",
+                offset: 10),
             FunctionModel(
-                functionName: "useColors()",
-                fileName: "ImageView.swift",
-                filePath: "/Users/neo/XcodeProjects/SwiftScout/Views/ImageView.swift",
-                lineNumber: 45,
-            ),
+                name: "updateUI()",
+                path: "/Users/neo/XcodeProjects/SwiftScout/Views/ImageView.swift",
+                offset: 45),
             FunctionModel(
-                functionName: "useColors()",
-                fileName: "PositionUtils.swift",
-                filePath: "/Users/neo/XcodeProjects/SwiftScout/Utils/PositionUtils.swift",
-                lineNumber: 123,
-            ),
+                name: "calculatePosition()",
+                path: "/Users/neo/XcodeProjects/SwiftScout/Utils/PositionUtils.swift",
+                offset: 123),
             FunctionModel(
-                functionName: "useColors()",
-                fileName: "Logger.swift",
-                filePath: "/Users/neo/XcodeProjects/SwiftScout/Core/Logger.swift",
-                lineNumber: 369,
-            )
+                name: "logMessage()",
+                path: "/Users/neo/XcodeProjects/SwiftScout/Core/Logger.swift",
+                offset: 369)
         ]
     }
 }

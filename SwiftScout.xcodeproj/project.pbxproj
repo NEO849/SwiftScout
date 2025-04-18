@@ -76,6 +76,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Data/Models/FunctionModel.swift,
+				Data/Models/RawSymbol.swift,
 				Data/Protocols/FunctionDataProvider.swift,
 				Data/Repositories/MockFunctionProvider.swift,
 				Data/Repositories/RealFunctionProvider.swift,

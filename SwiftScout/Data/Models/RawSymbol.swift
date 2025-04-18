@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Repräsentiert einen JSON-Eintrag aus sourcekitten
+/// Repräsentiert einen JSON-Eintrag wieder das von sourcekitten generiert wird.
 struct RawSymbol: Codable {
     let kind: String
     let name: String
@@ -22,11 +22,23 @@ struct RawSymbol: Codable {
     }
 }
 
-/// Wurzel-Objekt im JSON von sourcekitten (enthält "key.substructure")
+/// Wurzel-Objekt des JSONs, das das Array `key.substructure` enthält.
 struct SymbolRoot: Codable {
     let substructure: [RawSymbol]
 
     enum CodingKeys: String, CodingKey {
         case substructure = "key.substructure"
+    }
+}
+
+/// JSON-Daten die von sourceKitten geliefert werden in ein SymbolRoot-Objekt Parsen.
+func parseSymbols(from data: Data) -> [RawSymbol] {
+    do {
+        let decoder = JSONDecoder()
+        let result = try decoder.decode(SymbolRoot.self, from: data)
+        return result.substructure
+    } catch {
+        print("Fehler beim Parsen der Symboldaten: \(error)")
+        return []
     }
 }
