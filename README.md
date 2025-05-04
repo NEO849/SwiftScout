@@ -90,15 +90,11 @@ cd SwiftScout && open SwiftScout.xcodeproj
 | Combine           | Reaktive Datenpipeline       |
 | AppKit            | Native macOS-Integration     |
 
----
+--- 
 
 ## ![Lizenz](https://img.shields.io/badge/Lizenz-%230096FF?style=for-the-badge&logo=none)
 
-```text
 - Dieses Projekt ist unter der [CC0 1.0 Universal (CC0 1.0)](https://github.com/NEO849/Sports-Almanach/tree/main#) lizenziert. Siehe die LICENSE Datei für weitere Details.
-
-Vollständiger Lizenztext in LICENSE.md
-```
 
 ---
 
