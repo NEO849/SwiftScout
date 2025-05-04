@@ -3,7 +3,7 @@
 //  SwiftScout
 //
 //  Created by Michael Fleps on 04.05.25.
-//
+//.
 
 import SwiftUI
 
