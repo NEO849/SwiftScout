@@ -1,7 +1,7 @@
 <table>
   <tr>   
     <td>
-      <img src="Assets/ExtensionIcon.png" alt="SwiftScout Icon" width="150" />
+      <img src="https://github.com/NEO849/SwiftScout/blob/main/swiftscout_logo.png?raw=true" alt="SwiftScout Icon" width="150" />
     </td>
     <td>
       <h1 style="color: #0096FF;">SwiftScout</h1>
@@ -23,10 +23,9 @@ Zeigt Funktionsreferenzen direkt im Kontextmenü - modular, performant & produkt
 ## ![Design / Screenshots](https://img.shields.io/badge/Design-%230096FF?style=for-the-badge&logo=none)
 
 <div>
-  <img src="Assets/ExtensionIcon.png" alt="Screenshot 1" width="15%" />
-  <img src="Assets/ExtensionIcon.png" alt="Screenshot 2" width="15%" />
-  <img src="Assets/ExtensionIcon.png" alt="Screenshot 3" width="15%" />
-  <img src="Assets/ExtensionIcon.png" alt="Screenshot 4" width="15%" />
+  <img src="https://github.com/NEO849/SwiftScout/blob/main/swiftscout_logo.png?raw=true" alt="Screenshot 1" width="15%" />
+  <img src="https://github.com/NEO849/SwiftScout/blob/main/swiftscout_logo.png?raw=true" alt="Screenshot 2" width="15%" />
+  <img src="https://github.com/NEO849/SwiftScout/blob/main/swiftscout_logo.png?raw=true" alt="Screenshot 3" width="15%" />
 </div>
 
 ---
