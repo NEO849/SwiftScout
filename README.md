@@ -92,20 +92,9 @@ cd SwiftScout && open SwiftScout.xcodeproj
 
 ---
 
-## ![Roadmap](https://img.shields.io/badge/Roadmap-%230096FF?style=for-the-badge&logo=none)
-
-- [x] Basis-Integration mit XcodeKit
-- [x] SourceKitten-Parsing Engine
-- [ ] **Live Collaboration** (2024 Q3)
-- [ ] **AI Code Suggestions** (2024 Q4)
-- [ ] **Multi-Language Support** (2025 Q1)
-
----
-
 ## ![Lizenz](https://img.shields.io/badge/Lizenz-%230096FF?style=for-the-badge&logo=none)
 
 ```text
-MIT License
 - Dieses Projekt ist unter der [CC0 1.0 Universal (CC0 1.0)](https://github.com/NEO849/Sports-Almanach/tree/main#) lizenziert. Siehe die LICENSE Datei für weitere Details.
 
 Vollständiger Lizenztext in LICENSE.md
