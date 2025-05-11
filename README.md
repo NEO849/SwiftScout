@@ -55,6 +55,17 @@ Zeigt Funktionsreferenzen direkt im Kontextmenü - modular, performant & produkt
 
 ---
 
+Architecture 🏛️
+graph TD
+    A[FunctionFinderExtension] --> B(FunctionListViewModel)
+    B --> C(SourceFileParser)
+    C --> D[SwiftSyntax]
+    B --> E[simdjson]
+    A --> F[Hotkey]
+    A --> G(FloatingPanelView)
+
+---
+
 ## ![Installation](https://img.shields.io/badge/Installation-%230096FF?style=for-the-badge&logo=none)
 
 1. **Projekt klonen**
