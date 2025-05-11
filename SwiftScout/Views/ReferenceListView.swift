@@ -1,5 +1,5 @@
 //
-//  ReferneceListView.swift
+//  ReferenceListView.swift
 //  SwiftScout
 //
 //  Created by Michael Fleps on 06.05.25.
@@ -10,11 +10,11 @@ import Foundation
 import Combine
 
 // View, die die Liste der Funktionen anzeigt
-struct FunctionListView: View {
+struct ReferenceListView: View {
     @StateObject var viewModel = ReferenceViewModel() // ViewModel als StateObject
 
     var body: some View {
-        List(viewModel.reference) { reference in
+        List(viewModel.references) { reference in
             Button(action: {
                 // Aktion beim Klicken auf eine Funktion
                 navigateToFunction(lineNumber: reference.lineNumber)
