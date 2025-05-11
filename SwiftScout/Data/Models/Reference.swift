@@ -11,6 +11,6 @@ import Foundation
 struct Reference: Identifiable {
     let id = UUID()
     let name: String
-    let filePath: String
     let lineNumber: Int
+    let filePath: String
 }
